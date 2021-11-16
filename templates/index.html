@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="cz">
+{{template "head"}}
+<body>
+<main class="container">
+    <form method="post" id="imgUpload">
+        <div class="form-group">
+            <input type="file" style="margin-bottom:3px" name="file" id="file" class="form-control-file" /><br>
+        </div>
+    </form>
+    <button id="truncateDbpg">Vymazat databázi</button>
+
+    <div id="xhrContent">
+        <div style="margin-top:3px" id="imgContainer"></div>
+        <div id="imgList">
+            <table> 
+                {{range  $i,$val :=  .ImgList}}
+                    <tr><td><a href="javascript: void(0);" rel="{{$val}}">{{$val}}</a></td></tr>
+                {{end}}
+            </table>
+
+    </div>
+</main>
+<script src="/static/js/socket.io.js"></script>
+<script src="/static/js/default.js"></script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+server:
+  port: "1332"
+  
+database:
+  pgname: "dbpg"
